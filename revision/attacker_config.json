@@ -1,0 +1,29 @@
+{
+  "version": "declared-before-attacks-v1",
+  "control": "untouched real test partition from the same seed",
+  "n_attacks": 500,
+  "confidence_level": 0.95,
+  "singling_out": {
+    "seeds": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+    "mode": "multivariate",
+    "n_cols": 3,
+    "max_attempts": 100000,
+    "knowledge": "up to three predicates across the released feature columns; no identifier columns"
+  },
+  "linkability": {
+    "seeds": [0, 1, 2, 3, 4],
+    "n_neighbors": 10,
+    "aux_cols": [
+      ["age", "gender", "hospital_region", "admission_type_grouped"],
+      ["heart_rate_mean", "sbp_mean", "dbp_mean", "temperature_mean", "spo2_mean", "resp_rate_mean", "glucose_mean", "creatinine_mean", "hemoglobin_mean", "los_days", "apache_score"]
+    ]
+  },
+  "inference": {
+    "seeds": [0, 1, 2, 3, 4],
+    "secrets": ["ethnicity_grouped", "hospital_mortality"],
+    "auxiliary_rule": "all original feature columns except the secret (16 columns); includes the other secret",
+    "regression": false
+  },
+  "randomness": "seed each independent attack cell and verify repeated outputs; fail if an unseeded RNG path remains",
+  "interpretation": "control-adjusted attack risk with native Anonymeter confidence intervals; correlated inference that succeeds equally in control is not evidence of membership leakage"
+}

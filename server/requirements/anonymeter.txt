@@ -1,0 +1,19 @@
+# Observed imported runtime plus installed dependency closure.
+# Linux NCCL is installed separately for the XGBoost wheel.
+# Install with --no-deps; this CPU evaluation worker does not require Torch.
+anonymeter==1.0.0
+importlib-metadata==6.8.0
+joblib==1.5.2
+llvmlite==0.41.1
+numba==0.58.1
+numpy==1.25.2
+pandas==2.2.2
+python-dateutil==2.9.0.post0
+pytz==2021.1
+scikit-learn==1.3.2
+scipy==1.13.1
+six==1.16.0
+threadpoolctl==3.6.0
+tzdata==2023.3
+xgboost==2.1.4
+zipp==3.17.0

@@ -1,5 +1,8 @@
-# MIMIC-IV data files (restricted, not for public sharing)
+# PhysioNet data files (restricted, not for public sharing)
 data/
+results/private/
+results/revision/
+.venv-*/
 
 # Python cache
 __pycache__/
@@ -25,3 +28,38 @@ Thumbs.db
 
 # Claude Code session files
 .claude/
+
+# ---------------------------------------------------------------------------
+# PhysioNet DUA: no raw or derived patient-level data may be committed.
+# data/ is already excluded above; these patterns guard anything written
+# outside data/ (per-seed synthetic sets, cohort copies, scratch exports).
+# ---------------------------------------------------------------------------
+*cohort*.csv
+*synthetic_*.csv
+seed_*/
+runs/
+scratch/
+
+# Model checkpoints / fitted synthesizers
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.joblib
+*.h5
+models/
+checkpoints/
+
+# Credential files and server job logs
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+slurm-*.out
+slurm-*.err
+server/logs/
+*.log
+
+# DP generator virtual environment (Task 7)
+venv_dp/
