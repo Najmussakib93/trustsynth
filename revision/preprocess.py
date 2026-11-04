@@ -11,6 +11,7 @@ import pandas as pd
 from .protocol import DATA, COHORT, FEATURES, PROTOCOL
 from .legacy.extract_cohort import parse_age
 from .safe_reporting import ROOT, PUBLIC, category_counts, count, event_summary, write_json
+from .source_files import source_file
 
 RENAME = dict(heartrate='heart_rate_mean', sao2='spo2_mean', respiration='resp_rate_mean',
               systemicsystolic='sbp_mean', systemicdiastolic='dbp_mean', temperature='temperature_mean')
@@ -125,22 +126,24 @@ def main():
     started = time.perf_counter()
     DATA.mkdir(parents=True, exist_ok=True)
     source = ROOT / 'data'
-    patient = pd.read_csv(source / 'patient.csv', usecols=['uniquepid', 'patientunitstayid', 'age',
+    required_names = ['patient.csv', 'apachePatientResult.csv', 'hospital.csv', 'vitalPeriodic.csv', 'lab.csv']
+    sources = {name: source_file(source, name) for name in required_names}
+    patient = pd.read_csv(sources['patient.csv'], usecols=['uniquepid', 'patientunitstayid', 'age',
         'gender', 'ethnicity', 'unittype', 'hospitaldischargestatus', 'unitdischargeoffset', 'hospitalid'])
     p, flow = selected_patients(patient)
     ids = pd.Index(p.patientunitstayid.to_numpy())
-    apache = pd.read_csv(source / 'apachePatientResult.csv', usecols=['patientunitstayid', 'apacheversion', 'apachescore'])
+    apache = pd.read_csv(sources['apachePatientResult.csv'], usecols=['patientunitstayid', 'apacheversion', 'apachescore'])
     apache = apache.loc[apache.apacheversion.eq(PROTOCOL['apache_version'])].copy()
     if apache.empty:
         raise RuntimeError('Required APACHE version unavailable')
     apache['apachescore'] = apache.apachescore.where(apache.apachescore.ge(0))
     apache = apache.groupby('patientunitstayid').apachescore.mean().rename('apache_score')
     p = p.merge(apache, on='patientunitstayid', how='left', validate='one_to_one')
-    hospitals = pd.read_csv(source / 'hospital.csv', usecols=['hospitalid', 'region'])
+    hospitals = pd.read_csv(sources['hospital.csv'], usecols=['hospitalid', 'region'])
     p = p.merge(hospitals, on='hospitalid', how='left', validate='many_to_one')
     p['hospital_region'] = p.region.fillna('Unknown')
     print('Building approved all-stay source aggregates; output contains no patient rows.', flush=True)
-    vitals, vital_report = stream_means(source / 'vitalPeriodic.csv', ids,
+    vitals, vital_report = stream_means(sources['vitalPeriodic.csv'], ids,
         PROTOCOL['screening_bounds_inclusive'], RENAME, force=args.force_source_scan)
     p = p.merge(vitals, on='patientunitstayid', how='left', validate='one_to_one')
     provenance = pd.DataFrame(index=p.index)
@@ -152,9 +155,10 @@ def main():
         ('vitalAperiodic.csv', {'noninvasivesystolic': [40, 300], 'noninvasivediastolic': [20, 200]},
          {'noninvasivesystolic': 'sbp_mean', 'noninvasivediastolic': 'dbp_mean'}, 'wide'),
         ('nurseCharting.csv', {'temperature': [25, 45]}, {'temperature': 'temperature_mean'}, 'nurse')]:
-        optional[name] = (source / name).exists()
+        optional_path = source_file(source, name, required=False)
+        optional[name] = optional_path is not None
         if optional[name]:
-            extra, optional_reports[name] = stream_means(source / name, ids, fields, rename, kind, args.force_source_scan)
+            extra, optional_reports[name] = stream_means(optional_path, ids, fields, rename, kind, args.force_source_scan)
             extra = extra.set_index('patientunitstayid').reindex(p.patientunitstayid)
             for c in rename.values():
                 values = extra[c].to_numpy()
@@ -162,7 +166,7 @@ def main():
                 p.loc[take, c] = values[take]
                 provenance.loc[take, c] = name.removesuffix('.csv')
     print('Vital aggregates ready; building all-stay lab means.', flush=True)
-    labs, lab_report = stream_means(source / 'lab.csv', ids,
+    labs, lab_report = stream_means(sources['lab.csv'], ids,
         {'glucose': None, 'creatinine': None, 'Hgb': None},
         {'glucose': 'glucose_mean', 'creatinine': 'creatinine_mean', 'Hgb': 'hemoglobin_mean'},
         'lab', args.force_source_scan)
@@ -191,8 +195,7 @@ def main():
         'optional_sources_available': optional, 'vital_screening': vital_report,
         'optional_screening': optional_reports, 'lab_aggregation': lab_report,
         'source_provenance': {c: category_counts(provenance.loc[p.index, c]) for c in provenance},
-        'sources': [file_identity(source / name) for name in ['patient.csv', 'apachePatientResult.csv',
-                    'hospital.csv', 'vitalPeriodic.csv', 'lab.csv']],
+        'sources': [file_identity(sources[name]) for name in required_names],
         'wall_seconds': time.perf_counter() - started}
     write_json(manifest_path, report)
     print('Approved cohort:', flow['cohort_sample'], 'gender:', report['gender'],

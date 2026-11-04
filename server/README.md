@@ -3,7 +3,7 @@
 Use your UTHealth account and storage authorized for credentialed eICU data.
 GitHub supplies code only. It does not supply patient records, synthetic records,
 fitted models, private logs, or the laptop's current checkpoints. A fresh clone
-starts a new run. The existing laptop run continues independently.
+starts a new run. Laptop and server jobs have independent lifecycles.
 
 ## Clone and set up
 
@@ -59,6 +59,20 @@ data/hospital.csv
 data/vitalPeriodic.csv
 data/lab.csv
 ```
+
+Each file may instead be supplied as `.csv.gz`. **Do not decompress large source
+archives just to run this pipeline.** The reader streams compressed files and
+supports a mixture of plain CSV and gzip. When both forms exist, it prefers gzip
+so a partial CSV from a failed manual decompression is not used. An unreadable
+gzip archive fails rather than silently falling back to the plain file.
+This changes storage encoding only; cohort rules and model settings are unchanged.
+
+Check both filesystem space and your account quota before a run. Compressed
+sources save space, but generated cohorts, aggregate caches, synthetic sets,
+private evaluation caches and results still require writable storage. If home
+storage is insufficient, use the private project/scratch location supplied by
+your UTHealth administrator, subject to its retention policy. Keep source
+archives until their integrity and the storage move have been verified.
 
 These files are ignored by Git. Do not upload them to GitHub. Optional
 `vitalAperiodic.csv` and `nurseCharting.csv` were absent from the approved laptop

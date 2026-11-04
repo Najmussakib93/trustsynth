@@ -15,7 +15,11 @@ writes `MAIN_RUN_STATUS.json`.
 Obtain authorized [PhysioNet eICU-CRD v2.0 access](https://physionet.org/content/eicu-crd/2.0/)
 and comply with its credentialing, training and data-use agreement. Place the
 authorized CSV files in `data/`: `patient.csv`, `apachePatientResult.csv`,
-`hospital.csv`, `vitalPeriodic.csv`, and `lab.csv`. Optional additional sources
+`hospital.csv`, `vitalPeriodic.csv`, and `lab.csv`.
+Each source may also remain compressed as `.csv.gz`; the extractor streams it
+without creating an uncompressed copy. Mixed plain/gzip inputs are supported.
+If both encodings exist, gzip takes priority to avoid a partial CSV left by a
+failed manual decompression. Optional additional sources
 are `vitalAperiodic.csv` and `nurseCharting.csv`; both were absent in this run.
 Never publish real or derived synthetic records, fitted models, identifiers,
 predictions, nearest-record distances or raw debugging logs. Patient-level

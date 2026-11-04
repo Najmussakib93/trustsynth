@@ -35,7 +35,9 @@ A fresh clone starts a new run; Windows outputs do not prove GPU reproducibility
 Obtain authorized [PhysioNet eICU-CRD v2.0 access](https://physionet.org/content/eicu-crd/2.0/)
 and comply with its credentialing, training and data-use agreement. Place the
 authorized CSV files in `data/`: `patient.csv`, `apachePatientResult.csv`,
-`hospital.csv`, `vitalPeriodic.csv`, and `lab.csv`. Optional additional sources
+`hospital.csv`, `vitalPeriodic.csv`, and `lab.csv`. Each source may also remain
+compressed as `.csv.gz`; mixed plain/gzip inputs are supported. Gzip takes
+priority if both encodings exist. Optional additional sources
 are `vitalAperiodic.csv` and `nurseCharting.csv`; both were absent in this run.
 Never publish real or derived synthetic records, fitted models, identifiers,
 predictions, nearest-record distances or raw debugging logs. Patient-level

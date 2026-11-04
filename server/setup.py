@@ -53,7 +53,8 @@ def main():
             overlay(sdv, 'base')
             run([sdv, '-m', 'revision.server_smoke', '--kind', 'sdv', '--device', args.device])
             run([sdv, '-m', 'unittest', 'revision.test_audit', 'revision.test_preprocessing',
-                 'revision.test_metrics', 'revision.test_runtime_paths', 'revision.test_report_progress'])
+                 'revision.test_metrics', 'revision.test_runtime_paths', 'revision.test_report_progress',
+                 'revision.test_source_files'])
             print('SDV, evaluation and metric checks passed.', flush=True)
 
             synthcity = create('synthcity')

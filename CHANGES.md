@@ -91,3 +91,9 @@ commit or push was made. No values were manually adjusted to preserve findings.
 - Added platform-aware isolated-worker paths with an explicit error for missing environments. Adapted the import-only Synthcity patch and bounded AIM setup to Linux paths without changing generator algorithms or the scientific protocol.
 - Added `server/setup.py`, Linux package overlays, invented-data smoke checks, a private-log run wrapper and a Slurm template. Linux setup targets Python 3.10 and separate CPU/CUDA Torch versions for SDV and DDPM.
 - Added documentation for private eICU provisioning, server benchmarks, checkpoint reuse within a host and the existing structural-constraint approval gate. Linux/CUDA execution still requires the server-side setup checks; Windows results do not establish cross-platform equality.
+
+## 2026-11-04 — compressed source files for server storage limits
+
+- Added transparent `.csv.gz` source resolution for the five required inputs and optional sources. Mixed CSV/gzip inputs are supported; gzip takes priority over a possibly partial CSV from interrupted manual decompression.
+- Kept the cohort rules, screening, missingness handling and generator protocol unchanged. Source identities and aggregate cache keys record the file actually used.
+- Added invented-data checks proving complete cohort extraction agrees for plain, gzip and mixed sources. Documented that compressed inputs do not eliminate generated-output storage requirements.
