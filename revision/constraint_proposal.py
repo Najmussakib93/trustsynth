@@ -2,6 +2,8 @@
 
 No proposed new structural test is evaluated here. Only existing 15 rules run.
 """
+import argparse
+import csv
 import operator
 import numpy as np
 from .generators import split_cohort
@@ -21,7 +23,7 @@ def original_checks(frame):
         yield a + '_greater_than_' + b, applicable, frame[a] > frame[b]
 
 
-def main():
+def audit_original_rules():
     rows, violated = [], set()
     for seed in PROTOCOL['seeds']:
         train, _ = split_cohort(seed)
@@ -35,6 +37,10 @@ def main():
                 'csr_observed': float(valid[applicable].mean()) if applicable.any() else '',
                 'coverage': float(applicable.mean())})
     write_csv(PUBLIC / 'integrity' / 'original_real_train.csv', rows)
+    return violated
+
+
+def render_proposal(violated):
     rules = '\n'.join('- `' + name + '`: `' + str(rule) + '`.' for name, rule in DOMAIN_CONSTRAINTS.items())
     rules += '\n- `sbp_mean > dbp_mean` when both are observed.'
     failed = ', '.join('`' + name + '`' for name in sorted(violated)) or 'None'
@@ -66,10 +72,30 @@ The available features are all-stay averages, discharge LOS and a severity score
 | Age–hemoglobin relationship | Apply the same age groups and compare conditional hemoglobin medians and lower quartiles with real train. | Tests an age-conditioned lab relationship; chronic disease, sex and treatment preclude a hard clinical cutoff. |
 | Unit–severity consistency | Compare each unit group's APACHE median and interquartile range with real train. | Tests whether unit mix and illness severity remain coherent in the generated cohort. Unit group is not admission urgency. |
 
-For each comparison, resample real and synthetic records independently 1,000 times with the experimental seed, keeping the trained generator fixed. The primary output is the estimated deviation and 95% CI. A proposed population test passes when its two-sided bootstrap CI includes zero; family-level pass rates and all component estimates will be reported, with a multiplicity-adjusted sensitivity analysis. If a required group has fewer than 11 applicable records, the comparison is undefined and coverage is reduced, rather than counted as a pass. The real-versus-itself baseline is reported explicitly and is a calibration check, not independent clinical validation.
+For each comparison, resample real and synthetic records independently 1,000 times with the experimental seed, keeping the trained generator and real-train cutoffs fixed. Report every component's signed deviation, native units, pointwise 95% bootstrap CI, applicability and missingness coverage. If a required group has fewer than 11 applicable records, the comparison is undefined and coverage is reduced. The real-versus-itself baseline is a numerical reference, not independent empirical calibration or clinical validation.
+
+**Interpretation correction:** A confidence interval containing zero does not establish equivalence or preservation. No population-consistency pass/fail label or preservation pass rate will be computed without prespecified, scientifically meaningful equivalence margins. All component estimates will be reported, without selecting results by statistical significance; pointwise intervals do not establish family-wide error control. Population-consistency results remain separate from hard-rule CSR and will not be silently substituted into that score. See [Lakens (2017), Equivalence Tests](https://pmc.ncbi.nlm.nih.gov/articles/PMC5502906/).
 
 The resulting report would contain **hard-rule CSR** and **population consistency** as separate outputs. Existing per-constraint results remain visible. Please approve this list and separation, or specify which tests to revise, before implementation.
 '''
+    return proposal
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--proposal-only', action='store_true',
+                        help='Regenerate proposal text from the existing aggregate baseline; do not load records')
+    args = parser.parse_args()
+    if args.proposal_only:
+        baseline = PUBLIC / 'integrity' / 'original_real_train.csv'
+        with baseline.open(newline='', encoding='utf-8') as stream:
+            rows = list(csv.DictReader(stream))
+        if not rows or any(row['all_applicable_records_valid'] not in ['True', 'False'] for row in rows):
+            raise ValueError('Original-rule aggregate baseline is missing or has invalid validity flags')
+        violated = {row['constraint'] for row in rows if row['all_applicable_records_valid'] == 'False'}
+    else:
+        violated = audit_original_rules()
+    proposal = render_proposal(violated)
     (PUBLIC / 'STRUCTURAL_CONSTRAINT_PROPOSAL.md').write_text(proposal, encoding='utf-8')
     print('Original-rule baseline and structural proposal written; new constraints await author approval.', flush=True)
 

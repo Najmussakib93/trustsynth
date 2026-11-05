@@ -112,6 +112,17 @@ cells are reused; an interrupted fit restarts. The run stops at the Task 8(c)
 structural-constraint approval gate. Final TrustScores and publication figures
 remain pending that approval. Do not represent partial outputs as final results.
 
+Proposal wording can be refreshed from the existing aggregate real-rule baseline
+without loading records or rerunning training:
+
+```bash
+.venv-sdv/bin/python -m revision.constraint_proposal --proposal-only
+```
+
+The revised proposal reports population deviations and confidence intervals,
+without treating an interval containing zero as evidence of preservation. These
+new population checks remain unimplemented until the author's separate approval.
+
 GitHub does not carry the laptop's ignored caches or live status. Do not combine
 CPU and GPU seed results or assume bit-for-bit equality across operating systems,
 package versions or hardware. Keep the new host's receipts and environment

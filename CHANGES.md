@@ -97,3 +97,9 @@ commit or push was made. No values were manually adjusted to preserve findings.
 - Added transparent `.csv.gz` source resolution for the five required inputs and optional sources. Mixed CSV/gzip inputs are supported; gzip takes priority over a possibly partial CSV from interrupted manual decompression.
 - Kept the cohort rules, screening, missingness handling and generator protocol unchanged. Source identities and aggregate cache keys record the file actually used.
 - Added invented-data checks proving complete cohort extraction agrees for plain, gzip and mixed sources. Documented that compressed inputs do not eliminate generated-output storage requirements.
+
+## 2026-11-04 — structural proposal interpretation correction
+
+- Corrected the proposed population-consistency interpretation: a confidence interval containing zero does not establish preservation or equivalence. The proposed outputs are signed deviations, pointwise intervals and coverage; no binary preservation pass rate is proposed without meaningful prespecified equivalence margins.
+- Kept the seven proposed comparison families and hard-rule CSR separate. Reclassified the real-versus-itself comparison as a numerical reference, not independent empirical calibration.
+- Added `--proposal-only` to refresh the proposal from existing aggregate real-rule results without loading records or retraining. No new structural or population-consistency check has been implemented or run; Task 8(c) approval is still required.
