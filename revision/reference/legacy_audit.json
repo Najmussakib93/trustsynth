@@ -1,0 +1,4956 @@
+{
+  "kind": "disclosure_controlled_aggregate_reference",
+  "scope": "Source-workstation legacy evaluation audit; not server generator results",
+  "sources": {
+    "manuscript_comparison": {
+      "path": "audit/manuscript_comparison.csv",
+      "sha256": "f65eae42c48022a38ac935d3516d8ce3c5505e5317bce0ffc20a60eb71c1684c"
+    },
+    "headline_baseline": {
+      "path": "audit/headline_baseline.csv",
+      "sha256": "63c7c932dab3361df3cfedc2f7993922625f5143bf58515c017a5a650e492b1f"
+    },
+    "baseline_comparison": {
+      "path": "audit/baseline_comparison.csv",
+      "sha256": "e2c5dd3d166ffc647288446a84cc8894132b36d9df030ce4455f46b0e7c98267"
+    },
+    "legacy_fairness_clipping": {
+      "path": "audit/legacy_ctgan_fairness_components.json",
+      "sha256": "c4dd7293d8e92c2da80a8484a1cf73e90ddb9663fad3cb6f94a9eeb265c8c00a"
+    },
+    "vitals_diagnosis": {
+      "path": "diagnostics/vitals_ks_decomposition.csv",
+      "sha256": "c5adf4b06de6207892a95025de63bd175384c58da0ecb61eee9477ef0709134f"
+    }
+  },
+  "aggregates": {
+    "manuscript_comparison": [
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "utility.utility_score",
+        "paper_value": "0.866",
+        "recomputed_legacy": "0.8657",
+        "at_paper_precision": "0.866",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "privacy.privacy_score",
+        "paper_value": "0.983",
+        "recomputed_legacy": "0.9828",
+        "at_paper_precision": "0.983",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "fairness.fairness_score",
+        "paper_value": "0.868",
+        "recomputed_legacy": "0.8676",
+        "at_paper_precision": "0.868",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "fidelity.fidelity_score",
+        "paper_value": "0.217",
+        "recomputed_legacy": "0.2174",
+        "at_paper_precision": "0.217",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "integrity.integrity_score",
+        "paper_value": "1.000",
+        "recomputed_legacy": "1.0",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "utility.ks_mean",
+        "paper_value": "0.184",
+        "recomputed_legacy": "0.1844",
+        "at_paper_precision": "0.184",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "privacy.mia_accuracy",
+        "paper_value": "0.517",
+        "recomputed_legacy": "0.5172",
+        "at_paper_precision": "0.517",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "fidelity.tstr_gap",
+        "paper_value": "0.176",
+        "recomputed_legacy": "0.176",
+        "at_paper_precision": "0.176",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "GaussianCopula",
+        "metric": "integrity.csr",
+        "paper_value": "1.000",
+        "recomputed_legacy": "1.0",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "utility.utility_score",
+        "paper_value": "0.800",
+        "recomputed_legacy": "0.7998",
+        "at_paper_precision": "0.800",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "privacy.privacy_score",
+        "paper_value": "0.991",
+        "recomputed_legacy": "0.9905",
+        "at_paper_precision": "0.991",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "fairness.fairness_score",
+        "paper_value": "0.000",
+        "recomputed_legacy": "0.0",
+        "at_paper_precision": "0.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "fidelity.fidelity_score",
+        "paper_value": "0.261",
+        "recomputed_legacy": "0.2609",
+        "at_paper_precision": "0.261",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "integrity.integrity_score",
+        "paper_value": "1.000",
+        "recomputed_legacy": "0.9999",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "utility.ks_mean",
+        "paper_value": "0.201",
+        "recomputed_legacy": "0.2005",
+        "at_paper_precision": "0.201",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "privacy.mia_accuracy",
+        "paper_value": "0.510",
+        "recomputed_legacy": "0.5095",
+        "at_paper_precision": "0.510",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "fidelity.tstr_gap",
+        "paper_value": "0.108",
+        "recomputed_legacy": "0.108",
+        "at_paper_precision": "0.108",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "CTGAN",
+        "metric": "integrity.csr",
+        "paper_value": "1.000",
+        "recomputed_legacy": "0.9999",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "utility.utility_score",
+        "paper_value": "0.680",
+        "recomputed_legacy": "0.6801",
+        "at_paper_precision": "0.680",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "privacy.privacy_score",
+        "paper_value": "0.826",
+        "recomputed_legacy": "0.8262",
+        "at_paper_precision": "0.826",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "fairness.fairness_score",
+        "paper_value": "0.146",
+        "recomputed_legacy": "0.1465",
+        "at_paper_precision": "0.147",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "fidelity.fidelity_score",
+        "paper_value": "0.477",
+        "recomputed_legacy": "0.4771",
+        "at_paper_precision": "0.477",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "integrity.integrity_score",
+        "paper_value": "1.000",
+        "recomputed_legacy": "1.0",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "utility.ks_mean",
+        "paper_value": "0.245",
+        "recomputed_legacy": "0.2445",
+        "at_paper_precision": "0.245",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "privacy.mia_accuracy",
+        "paper_value": "0.507",
+        "recomputed_legacy": "0.5072",
+        "at_paper_precision": "0.507",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "fidelity.tstr_gap",
+        "paper_value": "0.067",
+        "recomputed_legacy": "0.0674",
+        "at_paper_precision": "0.067",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I",
+        "generator": "TVAE",
+        "metric": "integrity.csr",
+        "paper_value": "1.000",
+        "recomputed_legacy": "1.0",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "representation_ratio.White",
+        "paper_value": "0.999",
+        "recomputed_legacy": "0.9992",
+        "at_paper_precision": "0.999",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.White",
+        "paper_value": "0.801",
+        "recomputed_legacy": "0.801",
+        "at_paper_precision": "0.801",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "representation_ratio.White",
+        "paper_value": "1.217",
+        "recomputed_legacy": "1.2169",
+        "at_paper_precision": "1.217",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "representation_ratio.Black",
+        "paper_value": "0.999",
+        "recomputed_legacy": "0.9994",
+        "at_paper_precision": "0.999",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Black",
+        "paper_value": "0.850",
+        "recomputed_legacy": "0.8496",
+        "at_paper_precision": "0.850",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "representation_ratio.Black",
+        "paper_value": "0.513",
+        "recomputed_legacy": "0.5127",
+        "at_paper_precision": "0.513",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "representation_ratio.Hispanic",
+        "paper_value": "0.992",
+        "recomputed_legacy": "0.9915",
+        "at_paper_precision": "0.992",
+        "status": "rounding_boundary",
+        "note": "; archived value is exactly at the manuscript rounding midpoint; presentation convention requires consistency"
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Hispanic",
+        "paper_value": "2.278",
+        "recomputed_legacy": "2.2784",
+        "at_paper_precision": "2.278",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "representation_ratio.Hispanic",
+        "paper_value": "0.000",
+        "recomputed_legacy": "0.0",
+        "at_paper_precision": "0.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "representation_ratio.Asian",
+        "paper_value": "1.000",
+        "recomputed_legacy": "1.0",
+        "at_paper_precision": "1.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Asian",
+        "paper_value": "3.215",
+        "recomputed_legacy": "3.2154",
+        "at_paper_precision": "3.215",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "representation_ratio.Asian",
+        "paper_value": "0.000",
+        "recomputed_legacy": "0.0",
+        "at_paper_precision": "0.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "representation_ratio.Other",
+        "paper_value": "1.015",
+        "recomputed_legacy": "1.0153",
+        "at_paper_precision": "1.015",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Other",
+        "paper_value": "2.337",
+        "recomputed_legacy": "2.3368",
+        "at_paper_precision": "2.337",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "representation_ratio.Other",
+        "paper_value": "0.000",
+        "recomputed_legacy": "0.0",
+        "at_paper_precision": "0.000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "ethnicity_violations",
+        "paper_value": "<11",
+        "recomputed_legacy": "<11",
+        "at_paper_precision": "<11",
+        "status": "match",
+        "note": "Violated groups: "
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "ethnicity_violations",
+        "paper_value": "<11",
+        "recomputed_legacy": "<11",
+        "at_paper_precision": "<11",
+        "status": "mismatch",
+        "note": "Violated groups: OTHER, HISPANIC, ASIAN"
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "ethnicity_violations",
+        "paper_value": "<11",
+        "recomputed_legacy": "<11",
+        "at_paper_precision": "<11",
+        "status": "match",
+        "note": "Violated groups: WHITE, BLACK, OTHER, HISPANIC, ASIAN"
+      },
+      {
+        "location": "Table II",
+        "generator": "GaussianCopula",
+        "metric": "BAR_ethnicity_grouped",
+        "paper_value": "0.96",
+        "recomputed_legacy": "0.9559",
+        "at_paper_precision": "0.96",
+        "status": "match",
+        "note": "Legacy estimator reproduced; its empty-group handling remains invalid"
+      },
+      {
+        "location": "Table II",
+        "generator": "CTGAN",
+        "metric": "BAR_ethnicity_grouped",
+        "paper_value": "13.43",
+        "recomputed_legacy": "13.426",
+        "at_paper_precision": "13.43",
+        "status": "match",
+        "note": "Legacy estimator reproduced; its empty-group handling remains invalid"
+      },
+      {
+        "location": "Table II",
+        "generator": "TVAE",
+        "metric": "BAR_ethnicity_grouped",
+        "paper_value": "22.36",
+        "recomputed_legacy": "22.3568",
+        "at_paper_precision": "22.36",
+        "status": "match",
+        "note": "Legacy estimator reproduced; its empty-group handling remains invalid"
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "mortality_percent",
+        "paper_value": "9.4",
+        "recomputed_legacy": "9.385",
+        "at_paper_precision": "9.4",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "White_percent",
+        "paper_value": "77.6",
+        "recomputed_legacy": "77.58",
+        "at_paper_precision": "77.6",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "Black_percent",
+        "paper_value": "10.4",
+        "recomputed_legacy": "10.41",
+        "at_paper_precision": "10.4",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "Other_percent",
+        "paper_value": "6.6",
+        "recomputed_legacy": "6.585000000000001",
+        "at_paper_precision": "6.6",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "Hispanic_percent",
+        "paper_value": "3.7",
+        "recomputed_legacy": "3.7350000000000003",
+        "at_paper_precision": "3.7",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "Asian_percent",
+        "paper_value": "1.7",
+        "recomputed_legacy": "1.69",
+        "at_paper_precision": "1.7",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "patients",
+        "paper_value": "20000",
+        "recomputed_legacy": "20000",
+        "at_paper_precision": "20000",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Cohort methods",
+        "generator": "real",
+        "metric": "features",
+        "paper_value": "17",
+        "recomputed_legacy": "17",
+        "at_paper_precision": "17",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Table I caption and conclusions",
+        "generator": "real",
+        "metric": "sample_hospitals",
+        "paper_value": "208",
+        "recomputed_legacy": "203",
+        "at_paper_precision": "203",
+        "status": "mismatch",
+        "note": "Manuscript uses full database hospital count as though it were the sampled cohort count"
+      },
+      {
+        "location": "Utility prose",
+        "generator": "TRTR",
+        "metric": "AUROC",
+        "paper_value": "0.893",
+        "recomputed_legacy": "0.8928",
+        "at_paper_precision": "0.893",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "GaussianCopula",
+        "metric": "AUROC",
+        "paper_value": "0.717",
+        "recomputed_legacy": "0.7168",
+        "at_paper_precision": "0.717",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "GaussianCopula",
+        "metric": "TSTR_gap",
+        "paper_value": "0.176",
+        "recomputed_legacy": "0.176",
+        "at_paper_precision": "0.176",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "CTGAN",
+        "metric": "AUROC",
+        "paper_value": "0.785",
+        "recomputed_legacy": "0.7848",
+        "at_paper_precision": "0.785",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "CTGAN",
+        "metric": "TSTR_gap",
+        "paper_value": "0.108",
+        "recomputed_legacy": "0.108",
+        "at_paper_precision": "0.108",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "TVAE",
+        "metric": "AUROC",
+        "paper_value": "0.825",
+        "recomputed_legacy": "0.8254",
+        "at_paper_precision": "0.825",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Utility prose",
+        "generator": "TVAE",
+        "metric": "TSTR_gap",
+        "paper_value": "0.067",
+        "recomputed_legacy": "0.0674",
+        "at_paper_precision": "0.067",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fidelity prose",
+        "generator": "GaussianCopula",
+        "metric": "correlation_deviation",
+        "paper_value": "0.017",
+        "recomputed_legacy": "0.017",
+        "at_paper_precision": "0.017",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fairness prose",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Asian",
+        "paper_value": "3.22",
+        "recomputed_legacy": "3.2154",
+        "at_paper_precision": "3.22",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fairness prose",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Hispanic",
+        "paper_value": "2.28",
+        "recomputed_legacy": "2.2784",
+        "at_paper_precision": "2.28",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fairness prose",
+        "generator": "CTGAN",
+        "metric": "representation_ratio.Other",
+        "paper_value": "2.34",
+        "recomputed_legacy": "2.3368",
+        "at_paper_precision": "2.34",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fairness prose",
+        "generator": "TVAE",
+        "metric": "BAR_ethnicity_grouped",
+        "paper_value": "22.4",
+        "recomputed_legacy": "22.3568",
+        "at_paper_precision": "22.4",
+        "status": "match",
+        "note": ""
+      },
+      {
+        "location": "Fairness prose",
+        "generator": "CTGAN",
+        "metric": "BAR_ethnicity_grouped",
+        "paper_value": "13.4",
+        "recomputed_legacy": "13.426",
+        "at_paper_precision": "13.4",
+        "status": "match",
+        "note": ""
+      }
+    ],
+    "headline_baseline": [
+      {
+        "generator": "GaussianCopula",
+        "metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928"
+      },
+      {
+        "generator": "GaussianCopula",
+        "metric": "fidelity.auc_tstr",
+        "archived": "0.7168",
+        "recomputed": "0.7168"
+      },
+      {
+        "generator": "GaussianCopula",
+        "metric": "privacy.dcr_ratio",
+        "archived": "1.4545",
+        "recomputed": "1.4545"
+      },
+      {
+        "generator": "GaussianCopula",
+        "metric": "privacy.mia_accuracy",
+        "archived": "0.5172",
+        "recomputed": "0.5172"
+      },
+      {
+        "generator": "GaussianCopula",
+        "metric": "utility.ks_mean",
+        "archived": "0.1844",
+        "recomputed": "0.1844"
+      },
+      {
+        "generator": "CTGAN",
+        "metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928"
+      },
+      {
+        "generator": "CTGAN",
+        "metric": "fidelity.auc_tstr",
+        "archived": "0.7848",
+        "recomputed": "0.7848"
+      },
+      {
+        "generator": "CTGAN",
+        "metric": "privacy.dcr_ratio",
+        "archived": "1.3333",
+        "recomputed": "1.3333"
+      },
+      {
+        "generator": "CTGAN",
+        "metric": "privacy.mia_accuracy",
+        "archived": "0.5095",
+        "recomputed": "0.5095"
+      },
+      {
+        "generator": "CTGAN",
+        "metric": "utility.ks_mean",
+        "archived": "0.2005",
+        "recomputed": "0.2005"
+      },
+      {
+        "generator": "TVAE",
+        "metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928"
+      },
+      {
+        "generator": "TVAE",
+        "metric": "fidelity.auc_tstr",
+        "archived": "0.8254",
+        "recomputed": "0.8254"
+      },
+      {
+        "generator": "TVAE",
+        "metric": "privacy.dcr_ratio",
+        "archived": "0.6667",
+        "recomputed": "0.6667"
+      },
+      {
+        "generator": "TVAE",
+        "metric": "privacy.mia_accuracy",
+        "archived": "0.5072",
+        "recomputed": "0.5072"
+      },
+      {
+        "generator": "TVAE",
+        "metric": "utility.ks_mean",
+        "archived": "0.2445",
+        "recomputed": "0.2445"
+      }
+    ],
+    "baseline_comparison": [
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.0768",
+        "recomputed": "0.0768",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0172",
+        "recomputed": "0.0172",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.3816",
+        "recomputed": "0.3816",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.3864",
+        "recomputed": "0.3864",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4474",
+        "recomputed": "0.4474",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.0545",
+        "recomputed": "0.0545",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.0809",
+        "recomputed": "0.0809",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.3589",
+        "recomputed": "0.3589",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1779",
+        "recomputed": "0.1779",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.0293",
+        "recomputed": "0.0293",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.0859",
+        "recomputed": "0.0859",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.1156",
+        "recomputed": "0.1156",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.1844",
+        "recomputed": "0.1844",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.017",
+        "recomputed": "0.017",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.8657",
+        "recomputed": "0.8657",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5172",
+        "recomputed": "0.5172",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0221",
+        "recomputed": "0.0221",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.024",
+        "recomputed": "0.024",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0143",
+        "recomputed": "0.0143",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "0.0165",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "0.0083",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "1.4545",
+        "recomputed": "1.4545",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.9828",
+        "recomputed": "0.9828",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.0023",
+        "recomputed": "1.0023",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.9975",
+        "recomputed": "0.9975",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "0.9992",
+        "recomputed": "0.9992",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.9994",
+        "recomputed": "0.9994",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "1.0153",
+        "recomputed": "1.0153",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "0.9915",
+        "recomputed": "0.9915",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "1.2568",
+        "recomputed": "1.2568",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "0.9559",
+        "recomputed": "0.9559",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.8676",
+        "recomputed": "0.8676",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.7168",
+        "recomputed": "0.7168",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.176",
+        "recomputed": "0.176",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.3147",
+        "recomputed": "0.3147",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0749",
+        "recomputed": "0.0749",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0563",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.2174",
+        "recomputed": "0.2174",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "0.9997",
+        "recomputed": "0.9997",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.csr",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.1177",
+        "recomputed": "0.1177",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0756",
+        "recomputed": "0.0756",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.4172",
+        "recomputed": "0.4172",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.5458",
+        "recomputed": "0.5458",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4633",
+        "recomputed": "0.4633",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.0736",
+        "recomputed": "0.0736",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.0938",
+        "recomputed": "0.0938",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.1215",
+        "recomputed": "0.1215",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1707",
+        "recomputed": "0.1707",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.0355",
+        "recomputed": "0.0355",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.1775",
+        "recomputed": "0.1775",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.1144",
+        "recomputed": "0.1144",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.2005",
+        "recomputed": "0.2005",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0148",
+        "recomputed": "0.0148",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0233",
+        "recomputed": "0.0233",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0266",
+        "recomputed": "0.0266",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0199",
+        "recomputed": "0.0199",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0027",
+        "recomputed": "0.0027",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.0175",
+        "recomputed": "0.0175",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.0648",
+        "recomputed": "0.0648",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.7998",
+        "recomputed": "0.7998",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5095",
+        "recomputed": "0.5095",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0178",
+        "recomputed": "0.0178",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.022",
+        "recomputed": "0.022",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0104",
+        "recomputed": "0.0104",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "0.0165",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "0.0083",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "1.3333",
+        "recomputed": "1.3333",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.9905",
+        "recomputed": "0.9905",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.1655",
+        "recomputed": "1.1655",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.7437",
+        "recomputed": "0.7437",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "48.0",
+        "recomputed": "48.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "83.5",
+        "recomputed": "83.5",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "0.801",
+        "recomputed": "0.801",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.8496",
+        "recomputed": "0.8496",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "2.3368",
+        "recomputed": "2.3368",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "2.2784",
+        "recomputed": "2.2784",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "3.2154",
+        "recomputed": "3.2154",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "9.83",
+        "recomputed": "9.83",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "13.426",
+        "recomputed": "13.426",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.7848",
+        "recomputed": "0.7848",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.108",
+        "recomputed": "0.108",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.0618",
+        "recomputed": "0.0618",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0915",
+        "recomputed": "0.0915",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0563",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.2609",
+        "recomputed": "0.2609",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "0.9994",
+        "recomputed": "0.9994",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "0.9988",
+        "recomputed": "0.9988",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.csr",
+        "archived": "0.9999",
+        "recomputed": "0.9999",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "0.9999",
+        "recomputed": "0.9999",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.0754",
+        "recomputed": "0.0754",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0496",
+        "recomputed": "0.0496",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.4821",
+        "recomputed": "0.4821",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.5105",
+        "recomputed": "0.5105",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4698",
+        "recomputed": "0.4698",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.3667",
+        "recomputed": "0.3667",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.3323",
+        "recomputed": "0.3323",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.2273",
+        "recomputed": "0.2273",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1122",
+        "recomputed": "0.1122",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.1791",
+        "recomputed": "0.1791",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.0713",
+        "recomputed": "0.0713",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.0578",
+        "recomputed": "0.0578",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.2445",
+        "recomputed": "0.2445",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0145",
+        "recomputed": "0.0145",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0493",
+        "recomputed": "0.0493",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0823",
+        "recomputed": "0.0823",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0479",
+        "recomputed": "0.0479",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0009",
+        "recomputed": "0.0009",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.039",
+        "recomputed": "0.039",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.1573",
+        "recomputed": "0.1573",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.6801",
+        "recomputed": "0.6801",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5072",
+        "recomputed": "0.5072",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0078",
+        "recomputed": "0.0078",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.011",
+        "recomputed": "0.011",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0065",
+        "recomputed": "0.0065",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "0.0165",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "0.0083",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "0.6667",
+        "recomputed": "0.6667",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.8262",
+        "recomputed": "0.8262",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.303",
+        "recomputed": "1.303",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.6435",
+        "recomputed": "0.6435",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "1.2169",
+        "recomputed": "1.2169",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.5127",
+        "recomputed": "0.5127",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "1.621",
+        "recomputed": "1.621",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "22.3568",
+        "recomputed": "22.3568",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.1465",
+        "recomputed": "0.1465",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8928",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.8254",
+        "recomputed": "0.8254",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.0674",
+        "recomputed": "0.0674",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.2912",
+        "recomputed": "0.2912",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0869",
+        "recomputed": "0.0869",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0563",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.4771",
+        "recomputed": "0.4771",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "0.9998",
+        "recomputed": "0.9998",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.csr",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.0768",
+        "recomputed": "0.0763",
+        "difference": "-0.0004999999999999866",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0172",
+        "recomputed": "0.0138",
+        "difference": "-0.0034000000000000002",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.3816",
+        "recomputed": "0.3826",
+        "difference": "0.0010000000000000009",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.3864",
+        "recomputed": "0.3866",
+        "difference": "0.00019999999999997797",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4474",
+        "recomputed": "0.452",
+        "difference": "0.004599999999999993",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.0545",
+        "recomputed": "0.0482",
+        "difference": "-0.0063",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.0809",
+        "recomputed": "0.0729",
+        "difference": "-0.007999999999999993",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.3589",
+        "recomputed": "0.3606",
+        "difference": "0.0016999999999999793",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1779",
+        "recomputed": "0.1798",
+        "difference": "0.001899999999999985",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.0293",
+        "recomputed": "0.0245",
+        "difference": "-0.004799999999999999",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.0859",
+        "recomputed": "0.0862",
+        "difference": "0.0002999999999999947",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.1156",
+        "recomputed": "0.1154",
+        "difference": "-0.00019999999999999185",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.1844",
+        "recomputed": "0.1832",
+        "difference": "-0.0012000000000000066",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0",
+        "recomputed": "0.0002",
+        "difference": "0.0002",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0",
+        "recomputed": "0.0001",
+        "difference": "0.0001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.0",
+        "recomputed": "0.0001",
+        "difference": "0.0001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.017",
+        "recomputed": "0.0199",
+        "difference": "0.0029",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.8657",
+        "recomputed": "0.8645",
+        "difference": "-0.0011999999999999789",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5172",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0221",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.024",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0143",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "1.4545",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.9828",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.0023",
+        "recomputed": "1.0164",
+        "difference": "0.014100000000000001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.9975",
+        "recomputed": "0.9804",
+        "difference": "-0.017100000000000004",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "1.0",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "0.0",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "0.9992",
+        "recomputed": "1.0026",
+        "difference": "0.0033999999999999586",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.9994",
+        "recomputed": "0.9793",
+        "difference": "-0.020100000000000007",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "1.0153",
+        "recomputed": "1.0311",
+        "difference": "0.015799999999999814",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "0.9915",
+        "recomputed": "0.9637",
+        "difference": "-0.027800000000000047",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "1.0",
+        "recomputed": "0.9738",
+        "difference": "-0.0262",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "1.2568",
+        "recomputed": "7.7869",
+        "difference": "6.5301",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "0.9559",
+        "recomputed": "0.2706",
+        "difference": "-0.6853",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.8676",
+        "recomputed": "0.4891",
+        "difference": "-0.37850000000000006",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8996",
+        "difference": "0.006799999999999917",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.7168",
+        "recomputed": "0.7049",
+        "difference": "-0.011900000000000022",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.176",
+        "recomputed": "0.1948",
+        "difference": "0.01880000000000001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.3147",
+        "recomputed": "0.4176",
+        "difference": "0.10290000000000005",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0749",
+        "recomputed": "0.0751",
+        "difference": "0.00020000000000000573",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0566",
+        "difference": "0.0002999999999999947",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.2174",
+        "recomputed": "0.2218",
+        "difference": "0.004399999999999987",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "0.9997",
+        "recomputed": "0.9997",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.csr",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.1177",
+        "recomputed": "0.116",
+        "difference": "-0.0016999999999999932",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0756",
+        "recomputed": "0.0782",
+        "difference": "0.002600000000000005",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.4172",
+        "recomputed": "0.425",
+        "difference": "0.007799999999999974",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.5458",
+        "recomputed": "0.5197",
+        "difference": "-0.0260999999999999",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4633",
+        "recomputed": "0.4607",
+        "difference": "-0.002599999999999991",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.0736",
+        "recomputed": "0.0666",
+        "difference": "-0.006999999999999992",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.0938",
+        "recomputed": "0.1016",
+        "difference": "0.007800000000000001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.1215",
+        "recomputed": "0.1208",
+        "difference": "-0.0006999999999999923",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1707",
+        "recomputed": "0.1709",
+        "difference": "0.00020000000000000573",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.0355",
+        "recomputed": "0.0357",
+        "difference": "0.00020000000000000573",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.1775",
+        "recomputed": "0.1731",
+        "difference": "-0.004399999999999987",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.1144",
+        "recomputed": "0.1143",
+        "difference": "-0.00010000000000000286",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.2005",
+        "recomputed": "0.1985",
+        "difference": "-0.0020000000000000018",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0148",
+        "recomputed": "0.0168",
+        "difference": "0.0019999999999999983",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0233",
+        "recomputed": "0.0231",
+        "difference": "-0.00020000000000000226",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0266",
+        "recomputed": "0.0267",
+        "difference": "0.00010000000000000286",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0199",
+        "recomputed": "0.0205",
+        "difference": "0.0005999999999999998",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0027",
+        "recomputed": "0.0029",
+        "difference": "0.00019999999999999966",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.0175",
+        "recomputed": "0.018",
+        "difference": "0.000499999999999997",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.0648",
+        "recomputed": "0.067",
+        "difference": "0.0022000000000000075",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.7998",
+        "recomputed": "0.799",
+        "difference": "-0.0007999999999999119",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5095",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0178",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.022",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0104",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "1.3333",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.9905",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.1655",
+        "recomputed": "1.1819",
+        "difference": "0.01639999999999997",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.7437",
+        "recomputed": "0.731",
+        "difference": "-0.012700000000000045",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "48.0",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "83.5",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "0.801",
+        "recomputed": "0.8038",
+        "difference": "0.0027999999999999137",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.8496",
+        "recomputed": "0.8325",
+        "difference": "-0.017100000000000004",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "2.3368",
+        "recomputed": "2.3732",
+        "difference": "0.03639999999999999",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "2.2784",
+        "recomputed": "2.2145",
+        "difference": "-0.06389999999999985",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "3.2154",
+        "recomputed": "3.1311",
+        "difference": "-0.08429999999999982",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "9.83",
+        "recomputed": "60.9021",
+        "difference": "51.0721",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "13.426",
+        "recomputed": "3.8002",
+        "difference": "-9.6258",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.0",
+        "recomputed": "0.1048",
+        "difference": "0.1048",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8996",
+        "difference": "0.006799999999999917",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.7848",
+        "recomputed": "0.7952",
+        "difference": "0.010399999999999965",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.108",
+        "recomputed": "0.1044",
+        "difference": "-0.003599999999999992",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.0618",
+        "recomputed": "0.2118",
+        "difference": "0.15",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0915",
+        "recomputed": "0.0895",
+        "difference": "-0.0020000000000000018",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0566",
+        "difference": "0.0002999999999999947",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.2609",
+        "recomputed": "0.3449",
+        "difference": "0.08399999999999996",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "0.9994",
+        "recomputed": "0.9994",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "0.9988",
+        "recomputed": "0.9988",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.csr",
+        "archived": "0.9999",
+        "recomputed": "0.9999",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "0.9999",
+        "recomputed": "0.9999",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.age",
+        "archived": "0.0754",
+        "recomputed": "0.081",
+        "difference": "0.005600000000000008",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.heart_rate_mean",
+        "archived": "0.0496",
+        "recomputed": "0.049",
+        "difference": "-0.0005999999999999964",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.sbp_mean",
+        "archived": "0.4821",
+        "recomputed": "0.5118",
+        "difference": "0.02970000000000006",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.dbp_mean",
+        "archived": "0.5105",
+        "recomputed": "0.5451",
+        "difference": "0.034600000000000075",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.temperature_mean",
+        "archived": "0.4698",
+        "recomputed": "0.4827",
+        "difference": "0.012900000000000023",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.spo2_mean",
+        "archived": "0.3667",
+        "recomputed": "0.3726",
+        "difference": "0.005899999999999961",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.resp_rate_mean",
+        "archived": "0.3323",
+        "recomputed": "0.3402",
+        "difference": "0.007900000000000018",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.glucose_mean",
+        "archived": "0.2273",
+        "recomputed": "0.2246",
+        "difference": "-0.002700000000000008",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.creatinine_mean",
+        "archived": "0.1122",
+        "recomputed": "0.1089",
+        "difference": "-0.0032999999999999974",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.hemoglobin_mean",
+        "archived": "0.1791",
+        "recomputed": "0.1788",
+        "difference": "-0.00030000000000002247",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.los_days",
+        "archived": "0.0713",
+        "recomputed": "0.0778",
+        "difference": "0.006499999999999992",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_per_feature.apache_score",
+        "archived": "0.0578",
+        "recomputed": "0.0577",
+        "difference": "-9.999999999999593e-05",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.ks_mean",
+        "archived": "0.2445",
+        "recomputed": "0.2525",
+        "difference": "0.008000000000000007",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.gender",
+        "archived": "0.0145",
+        "recomputed": "0.0157",
+        "difference": "0.001199999999999998",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.ethnicity_grouped",
+        "archived": "0.0493",
+        "recomputed": "0.0499",
+        "difference": "0.0006000000000000033",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.admission_type_grouped",
+        "archived": "0.0823",
+        "recomputed": "0.0816",
+        "difference": "-0.0006999999999999923",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.hospital_region",
+        "archived": "0.0479",
+        "recomputed": "0.0466",
+        "difference": "-0.0012999999999999956",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_per_feature.hospital_mortality",
+        "archived": "0.0009",
+        "recomputed": "0.0008",
+        "difference": "-9.999999999999994e-05",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.jsd_mean",
+        "archived": "0.039",
+        "recomputed": "0.0389",
+        "difference": "-0.00010000000000000286",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.corr_deviation",
+        "archived": "0.1573",
+        "recomputed": "0.1627",
+        "difference": "0.005400000000000016",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "utility.utility_score",
+        "archived": "0.6801",
+        "recomputed": "0.6713",
+        "difference": "-0.00880000000000003",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.mia_accuracy",
+        "archived": "0.5072",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.mia_std",
+        "archived": "0.0078",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_synth_median",
+        "archived": "0.011",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_synth_5pct",
+        "archived": "0.0065",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_holdout_median",
+        "archived": "0.0165",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_holdout_5pct",
+        "archived": "0.0083",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.dcr_ratio",
+        "archived": "0.6667",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "privacy.privacy_score",
+        "archived": "0.8262",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_MALE",
+        "archived": "1.303",
+        "recomputed": "1.3213",
+        "difference": "0.018299999999999983",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_FEMALE",
+        "archived": "0.6435",
+        "recomputed": "0.6325",
+        "difference": "-0.01100000000000001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_UNKNOWN",
+        "archived": "0.0",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.gender_OTHER",
+        "archived": "0.0",
+        "recomputed": "",
+        "difference": "",
+        "status": "pending"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_WHITE",
+        "archived": "1.2169",
+        "recomputed": "1.2211",
+        "difference": "0.0041999999999999815",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_BLACK",
+        "archived": "0.5127",
+        "recomputed": "0.5024",
+        "difference": "-0.010300000000000087",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_OTHER",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_HISPANIC",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_ratios.ethnicity_grouped_ASIAN",
+        "archived": "0.0",
+        "recomputed": "0.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_violations",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.representation_total_groups",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.BAR_gender",
+        "archived": "1.621",
+        "recomputed": "10.0429",
+        "difference": "8.421899999999999",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.BAR_ethnicity_grouped",
+        "archived": "22.3568",
+        "recomputed": "6.3281",
+        "difference": "-16.0287",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fairness.fairness_score",
+        "archived": "0.1465",
+        "recomputed": "0.1852",
+        "difference": "0.03870000000000001",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.auc_trtr",
+        "archived": "0.8928",
+        "recomputed": "0.8996",
+        "difference": "0.006799999999999917",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.auc_tstr",
+        "archived": "0.8254",
+        "recomputed": "0.8331",
+        "difference": "0.007699999999999929",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.tstr_gap",
+        "archived": "0.0674",
+        "recomputed": "0.0666",
+        "difference": "-0.0007999999999999952",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.fi_rank_correlation",
+        "archived": "0.2912",
+        "recomputed": "0.4971",
+        "difference": "0.20589999999999997",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.brier_score_tstr",
+        "archived": "0.0869",
+        "recomputed": "0.0909",
+        "difference": "0.00399999999999999",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.brier_score_trtr",
+        "archived": "0.0563",
+        "recomputed": "0.0566",
+        "difference": "0.0002999999999999947",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "fidelity.fidelity_score",
+        "archived": "0.4771",
+        "recomputed": "0.582",
+        "difference": "0.10489999999999994",
+        "status": "changed"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.age_valid",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.age_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.hr_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.hr_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.dbp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.spo2_range",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.temp_lower",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.temp_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.los_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.mortality_binary",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.apache_nonneg",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.apache_upper",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraint_results.sbp_mean_>_dbp_mean",
+        "archived": "0.9998",
+        "recomputed": "0.9998",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.csr",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.constraints_below_95",
+        "archived": "<11",
+        "recomputed": "<11",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.total_constraints",
+        "archived": "15",
+        "recomputed": "15",
+        "difference": "",
+        "status": "match_at_archived_precision"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "legacy_metric": "integrity.integrity_score",
+        "archived": "1.0",
+        "recomputed": "1.0",
+        "difference": "0.0",
+        "status": "match_at_archived_precision"
+      }
+    ],
+    "legacy_fairness_clipping": {
+      "representation_component_before_floor": -14.011311111111107,
+      "BAR_component_before_floor": -9.628,
+      "representation_component_after_floor": 0.0,
+      "BAR_component_after_floor": 0.0,
+      "saved_score": 0.0,
+      "rule": "arithmetic mean of each component floored at zero; legacy BAR uses first two observed groups"
+    },
+    "vitals_diagnosis": [
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "sbp_mean",
+        "ks_all": "0.38322500000000004",
+        "ks_observed_only_diagnostic": "0.15055300759392487",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.38322500000000004",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "sbp_mean",
+        "ks_all": "0.4177624999999999",
+        "ks_observed_only_diagnostic": "0.3768347821742606",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.4177624999999999",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "sbp_mean",
+        "ks_all": "0.48263749999999994",
+        "ks_observed_only_diagnostic": "0.40669469424460425",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.48263749999999994",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "dbp_mean",
+        "ks_all": "0.3881375",
+        "ks_observed_only_diagnostic": "0.1281084132693845",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.3881375",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "dbp_mean",
+        "ks_all": "0.546225",
+        "ks_observed_only_diagnostic": "0.356814548361311",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.546225",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "dbp_mean",
+        "ks_all": "0.510975",
+        "ks_observed_only_diagnostic": "0.41186470823341326",
+        "imputed_fraction": "0.7498",
+        "ks_at_imputation_jump": "0.510975",
+        "atom_KS_lower_bound": "0.3749",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "temperature_mean",
+        "ks_all": "0.4479875",
+        "ks_observed_only_diagnostic": "0.09094357126645485",
+        "imputed_fraction": "0.88985",
+        "ks_at_imputation_jump": "0.4479875",
+        "atom_KS_lower_bound": "0.444925",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "temperature_mean",
+        "ks_all": "0.46386249999999996",
+        "ks_observed_only_diagnostic": "0.45634875737630504",
+        "imputed_fraction": "0.88985",
+        "ks_at_imputation_jump": "0.46386249999999996",
+        "atom_KS_lower_bound": "0.444925",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "temperature_mean",
+        "ks_all": "0.47104999999999997",
+        "ks_observed_only_diagnostic": "0.497036257376305",
+        "imputed_fraction": "0.88985",
+        "ks_at_imputation_jump": "0.47104999999999997",
+        "atom_KS_lower_bound": "0.444925",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.016212500000000074",
+        "ks_observed_only_diagnostic": "0.009577913070283606",
+        "imputed_fraction": "0.0268",
+        "ks_at_imputation_jump": "0.015425000000000022",
+        "atom_KS_lower_bound": "0.0134",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.07674999999999993",
+        "ks_observed_only_diagnostic": "0.07603835285655569",
+        "imputed_fraction": "0.0268",
+        "ks_at_imputation_jump": "0.07674999999999993",
+        "atom_KS_lower_bound": "0.0134",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.04884999999999998",
+        "ks_observed_only_diagnostic": "0.05409232429099878",
+        "imputed_fraction": "0.0268",
+        "ks_at_imputation_jump": "0.02018749999999997",
+        "atom_KS_lower_bound": "0.0134",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "spo2_mean",
+        "ks_all": "0.05461250000000001",
+        "ks_observed_only_diagnostic": "0.03796185064935065",
+        "imputed_fraction": "0.0375",
+        "ks_at_imputation_jump": "0.05388749999999998",
+        "atom_KS_lower_bound": "0.018775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "spo2_mean",
+        "ks_all": "0.0743875",
+        "ks_observed_only_diagnostic": "0.06921347402597403",
+        "imputed_fraction": "0.0375",
+        "ks_at_imputation_jump": "0.01932499999999998",
+        "atom_KS_lower_bound": "0.018775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "spo2_mean",
+        "ks_all": "0.3661",
+        "ks_observed_only_diagnostic": "0.3474431818181818",
+        "imputed_fraction": "0.0375",
+        "ks_at_imputation_jump": "0.3659125",
+        "atom_KS_lower_bound": "0.018775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "GaussianCopula",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.07860000000000006",
+        "ks_observed_only_diagnostic": "0.03169710874011833",
+        "imputed_fraction": "0.09555",
+        "ks_at_imputation_jump": "0.07850000000000001",
+        "atom_KS_lower_bound": "0.047775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "CTGAN",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.09497499999999998",
+        "ks_observed_only_diagnostic": "0.09910734769749573",
+        "imputed_fraction": "0.09555",
+        "ks_at_imputation_jump": "0.09492499999999998",
+        "atom_KS_lower_bound": "0.047775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "unfiltered_candidate",
+        "generator": "TVAE",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.3335125",
+        "ks_observed_only_diagnostic": "0.3164304895240202",
+        "imputed_fraction": "0.09555",
+        "ks_at_imputation_jump": "0.333425",
+        "atom_KS_lower_bound": "0.047775",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "sbp_mean",
+        "ks_all": "0.381425",
+        "ks_observed_only_diagnostic": "0.13922029438682126",
+        "imputed_fraction": "0.75415",
+        "ks_at_imputation_jump": "0.381425",
+        "atom_KS_lower_bound": "0.377075",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "sbp_mean",
+        "ks_all": "0.42585",
+        "ks_observed_only_diagnostic": "0.36110149735611147",
+        "imputed_fraction": "0.75415",
+        "ks_at_imputation_jump": "0.42585",
+        "atom_KS_lower_bound": "0.377075",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "sbp_mean",
+        "ks_all": "0.5126624999999999",
+        "ks_observed_only_diagnostic": "0.42540634533251986",
+        "imputed_fraction": "0.75415",
+        "ks_at_imputation_jump": "0.5126624999999999",
+        "atom_KS_lower_bound": "0.377075",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "dbp_mean",
+        "ks_all": "0.38627500000000003",
+        "ks_observed_only_diagnostic": "0.1384986269324654",
+        "imputed_fraction": "0.7542",
+        "ks_at_imputation_jump": "0.38627500000000003",
+        "atom_KS_lower_bound": "0.3771",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "dbp_mean",
+        "ks_all": "0.5196749999999999",
+        "ks_observed_only_diagnostic": "0.3731067432872254",
+        "imputed_fraction": "0.7542",
+        "ks_at_imputation_jump": "0.5196749999999999",
+        "atom_KS_lower_bound": "0.3771",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "dbp_mean",
+        "ks_all": "0.544775",
+        "ks_observed_only_diagnostic": "0.4279817432872254",
+        "imputed_fraction": "0.7542",
+        "ks_at_imputation_jump": "0.544775",
+        "atom_KS_lower_bound": "0.3771",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "temperature_mean",
+        "ks_all": "0.4527375",
+        "ks_observed_only_diagnostic": "0.10152376333656643",
+        "imputed_fraction": "0.8969",
+        "ks_at_imputation_jump": "0.4527375",
+        "atom_KS_lower_bound": "0.44845",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "temperature_mean",
+        "ks_all": "0.461425",
+        "ks_observed_only_diagnostic": "0.46216452473326863",
+        "imputed_fraction": "0.8969",
+        "ks_at_imputation_jump": "0.461425",
+        "atom_KS_lower_bound": "0.44845",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "temperature_mean",
+        "ks_all": "0.48028750000000003",
+        "ks_observed_only_diagnostic": "0.4988520247332686",
+        "imputed_fraction": "0.8969",
+        "ks_at_imputation_jump": "0.48028750000000003",
+        "atom_KS_lower_bound": "0.44845",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.014374999999999916",
+        "ks_observed_only_diagnostic": "0.00797885297291745",
+        "imputed_fraction": "0.02705",
+        "ks_at_imputation_jump": "0.014125000000000054",
+        "atom_KS_lower_bound": "0.013525",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.07834999999999998",
+        "ks_observed_only_diagnostic": "0.0814468337273242",
+        "imputed_fraction": "0.02705",
+        "ks_at_imputation_jump": "0.07829999999999993",
+        "atom_KS_lower_bound": "0.013525",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "heart_rate_mean",
+        "ks_all": "0.04906250000000001",
+        "ks_observed_only_diagnostic": "0.05469383704198569",
+        "imputed_fraction": "0.02705",
+        "ks_at_imputation_jump": "0.02179999999999993",
+        "atom_KS_lower_bound": "0.013525",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "spo2_mean",
+        "ks_all": "0.05122500000000002",
+        "ks_observed_only_diagnostic": "0.03678612266112269",
+        "imputed_fraction": "0.038",
+        "ks_at_imputation_jump": "0.050387499999999974",
+        "atom_KS_lower_bound": "0.01905",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "spo2_mean",
+        "ks_all": "0.0691125",
+        "ks_observed_only_diagnostic": "0.06397089397089398",
+        "imputed_fraction": "0.038",
+        "ks_at_imputation_jump": "0.02227499999999999",
+        "atom_KS_lower_bound": "0.01905",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "spo2_mean",
+        "ks_all": "0.3702875",
+        "ks_observed_only_diagnostic": "0.35178521309771316",
+        "imputed_fraction": "0.038",
+        "ks_at_imputation_jump": "0.36996249999999997",
+        "atom_KS_lower_bound": "0.01905",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "GaussianCopula",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.07348749999999998",
+        "ks_observed_only_diagnostic": "0.025341821201217862",
+        "imputed_fraction": "0.09675",
+        "ks_at_imputation_jump": "0.07290000000000008",
+        "atom_KS_lower_bound": "0.048375",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "CTGAN",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.10172500000000001",
+        "ks_observed_only_diagnostic": "0.09518807085524496",
+        "imputed_fraction": "0.09675",
+        "ks_at_imputation_jump": "0.10172500000000001",
+        "atom_KS_lower_bound": "0.048375",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      },
+      {
+        "variant": "binary_current",
+        "generator": "TVAE",
+        "feature": "resp_rate_mean",
+        "ks_all": "0.3402875",
+        "ks_observed_only_diagnostic": "0.321734206338223",
+        "imputed_fraction": "0.09675",
+        "ks_at_imputation_jump": "0.3402875",
+        "atom_KS_lower_bound": "0.048375",
+        "note": "observed-only comparison changes the reference population; diagnostic, not a replacement metric"
+      }
+    ]
+  }
+}

@@ -121,7 +121,50 @@ without loading records or rerunning training:
 
 The revised proposal reports population deviations and confidence intervals,
 without treating an interval containing zero as evidence of preservation. These
-new population checks remain unimplemented until the author's separate approval.
+population checks were separately approved by the author on 2026-11-04. They
+remain separate from hard-rule CSR; the three real-violated rules stay in the
+diagnostic tables but are excluded from primary CSR.
+
+## Finish the completed server run after approval
+
+For the existing completed run in `/data/nsakib1/trustsynth`, run from the
+repository root:
+
+```bash
+cd /data/nsakib1/trustsynth
+git pull --ff-only origin master
+umask 077
+mkdir -p results/private
+nohup .venv-sdv/bin/python -m revision.finalize --run > results/private/finalization-launcher.log 2>&1 &
+echo "Finalization PID: $!"
+```
+
+This uses CPU evaluation and existing private caches. It does not run setup,
+extract the cohort again or retrain any generator; no GPU selection is needed.
+It validates the forty main cells, six mechanism cells, independent repeat checks
+and prerequisite metrics before continuing. Missing prerequisites cause a safe
+stop rather than an automatic training rerun. Concurrent finalizers are blocked.
+The initial short bootstrap pilot writes a provisional runtime estimate to
+`results/revision/finalization_runtime_estimate.json`.
+
+Monitor progress without opening patient files:
+
+```bash
+cat results/private/finalization-launcher.log
+cat results/revision/RUN_STATUS.json
+cat results/revision/finalization_runtime_estimate.json
+```
+
+When `FINALIZATION_STATUS.json` says `complete`, read
+`results/revision/REVISION_REPORT.md`. Download
+`results/revision/trustsynth_aggregate_review.zip` for aggregate review. Its
+explicit allowlist excludes records, models, predictions, distances and private
+logs. Publication TIFF originals remain under `results/revision/figures/`;
+the review archive includes PNG figures. Do not upload `data/` or
+`results/private/`. If interrupted, repeat the same finalization command;
+validated integrity cells are reused. After completion,
+`.venv-sdv/bin/python 03_generate_outputs.py` regenerates aggregate reports and
+figures without loading patient records.
 
 GitHub does not carry the laptop's ignored caches or live status. Do not combine
 CPU and GPU seed results or assume bit-for-bit equality across operating systems,

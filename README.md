@@ -108,7 +108,7 @@ attacker auxiliary columns and secrets are declared before execution in
 module-level singling-out generator are scoped to deterministic seeded streams;
 repeated attacks are checked before accepting seed-0 results.
 
-## Outputs and remaining gate
+## Outputs and approved finalization
 
 The combined metric table is `results/revision/per_seed_results.csv`, with
 `seed,generator,metric,value`. Per-cell subgroup, representation, parity and
@@ -119,9 +119,14 @@ The original audit and manuscript-number mapping are generated locally under
 `results/revision/audit/`. Legacy source is frozen in `revision/legacy/` and the
 audit entry points use that schema. Old tracked figures/results are historical
 artifacts, not outputs of the revised protocol. New run outputs are ignored by Git.
-New structural tests stop at the Task 8(c) author-approval gate. Final scores,
-paired statistics, supplementary methods and 500-dpi final figures follow that
-approval; the current interim report must not be represented as a finished paper.
+The author approved the corrected Task 8(c) proposal on 2026-11-04. Existing
+completed server runs continue with `.venv-sdv/bin/python -m revision.finalize
+--run` from the repository root, as documented in [server/README.md](server/README.md).
+This reuses completed fits and adds the seven population-consistency families,
+hard-rule audit, scores, paired statistics, sensitivity, supplementary methods
+and 500-dpi figures without retraining. Population deviations are separate from
+CSR, with no preservation pass/fail claim. Actual completion is recorded in
+`FINALIZATION_STATUS.json`; the interim report is not a finished paper.
 
 Configured Git remote: `https://github.com/Najmussakib93/trustsynth.git`. This differs from the manuscript URL
 `github.com/Najmus-Sakib/TrustSynth`; remote ownership has not been inferred.

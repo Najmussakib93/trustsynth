@@ -7,6 +7,10 @@ from .safe_reporting import ROOT, PUBLIC, write_json, write_csv
 
 
 def main():
+    final_status = PUBLIC / 'FINALIZATION_STATUS.json'
+    if final_status.exists() and json.loads(final_status.read_text()).get('state') == 'complete':
+        print('Final analysis already complete; use 03_generate_outputs.py to regenerate it.', flush=True)
+        return
     rows = []
     for path in sorted((PUBLIC / 'cells').glob('*/*_metrics.csv')):
         with path.open(newline='', encoding='utf-8') as stream:
@@ -32,6 +36,10 @@ def main():
             data = json.loads(path.read_text())
             completed.setdefault(data['settings']['generator'], []).append(data['settings']['seed'])
     inventory = '\n'.join('- ' + name + ': seeds ' + ', '.join(map(str, seeds)) for name, seeds in completed.items())
+    structural_state = ('The author approved the corrected seven-family structural plan on 2026-11-04. '
+        'Run `python -m revision.finalize --run` in the server SDV environment to reuse completed fits and '
+        'finish integrity, population deviations, sensitivity, statistics and publication outputs. '
+        'Population checks remain separate from hard CSR and make no preservation pass/fail claims.')
     report = f'''# TrustSynth revision report — interim
 
 Generated {datetime.now(timezone.utc).isoformat()}. Last runner state: **{status['state']}**. This is a staged report; incomplete experiments are not final paper findings.
@@ -68,7 +76,7 @@ The legacy attack is five-fold logistic classification of membership from four s
 
 ## Tasks 8–11 and scientific conclusions
 
-New structural tests require the separate approval explicitly requested in Task 8(c), and none has been implemented. Score sensitivity, full paired statistics, final figures and supplementary methods follow that gate. Minority erasure, inflation, dominance, memorization and uniformly high structural integrity remain **unresolved under the corrected protocol** until the required experiments finish. Original findings will not be preserved by assumption.
+{structural_state} Minority erasure, inflation, dominance, memorization and uniformly high structural integrity remain **unresolved under the corrected protocol** until the required experiments finish. Original findings will not be preserved by assumption.
 
 ## Files
 

@@ -103,3 +103,19 @@ commit or push was made. No values were manually adjusted to preserve findings.
 - Corrected the proposed population-consistency interpretation: a confidence interval containing zero does not establish preservation or equivalence. The proposed outputs are signed deviations, pointwise intervals and coverage; no binary preservation pass rate is proposed without meaningful prespecified equivalence margins.
 - Kept the seven proposed comparison families and hard-rule CSR separate. Reclassified the real-versus-itself comparison as a numerical reference, not independent empirical calibration.
 - Added `--proposal-only` to refresh the proposal from existing aggregate real-rule results without loading records or retraining. No new structural or population-consistency check has been implemented or run; Task 8(c) approval is still required.
+
+## 2026-11-05 — author-approved finalization
+
+- Recorded the corrected seven-family Task 8(c) approval. Excluded the three
+  real-violated rules from primary hard CSR while retaining their diagnostics.
+- Added record-level CSR and coverage, separate descriptive population deviations
+  with conditional bootstrap intervals, and deterministic repeat checks.
+- Added explicit normalization, undefined-score handling, paired seed statistics,
+  weight/reference/threshold sensitivity and manuscript-number comparisons.
+- Added generated methods, Algorithm 1, revision report, CSV/LaTeX tables and
+  500-dpi PNG/TIFF figures. Historical audit references contain aggregates only.
+- Added a CPU-only post-training finalizer with prerequisite validation, private
+  logs, a runtime pilot and an explicitly allowlisted aggregate review archive.
+  It never schedules generator training or retries unavailable AIM dependencies.
+- Verified with invented data; actual corrected server results require running
+  finalization on the existing private server caches. The manuscript is unchanged.

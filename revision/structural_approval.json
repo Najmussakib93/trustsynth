@@ -1,0 +1,12 @@
+{
+  "status": "approved_by_author",
+  "date": "2026-11-04",
+  "scope": "Original Task 8(c), corrected proposal explicitly approved in chat",
+  "families": ["apache_mortality", "joint_respiratory", "los_by_unit", "los_by_mortality", "age_creatinine", "age_hemoglobin", "unit_severity"],
+  "excluded_primary_rules": ["sbp_mean_greater_than_dbp_mean", "sbp_upper", "temp_lower"],
+  "bootstrap_resamples": 1000,
+  "interval": [0.025, 0.975],
+  "minimum_applicable_records": 11,
+  "population_preservation_pass_fail": false,
+  "population_in_hard_rule_score": false
+}
