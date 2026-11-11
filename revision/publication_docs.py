@@ -47,7 +47,7 @@ The fixed cohort sample size is {PROTOCOL['cohort_size']}; cohort sampling seed 
 
 At least {PROTOCOL['minimum_observed_features']} of {len(FEATURES)} fields must be observed before fixed-size random sampling. Missingness is retained. Each model fits numeric fills/category handling only to its own training data; generator missing indicators are reversed after synthesis. Sources may be CSV or gzip. Optional sources and all preprocessing counts are in `preprocessing/manifest.json`.
 
-Seeds are `{PROTOCOL['seeds']}` with mortality-stratified test fraction {PROTOCOL['test_fraction']}. CTGAN/TVAE have {PROTOCOL['ctgan_epochs']} epochs; mechanism seeds are `{PROTOCOL['mechanism_seeds']}`, using CTGAN log_frequency=False or TVAE {PROTOCOL['tvae_mechanism_epochs']} epochs. Full independent seed-0 fits and seeded attack repeats must match before accepting results. Python, NumPy, Torch/SDV and XGBoost randomness is controlled; serial generator transforms avoid unsafe shared RNG contexts. Exact devices, library versions and source hashes remain in each receipt. CPU/GPU or operating-system bitwise equality is not assumed.
+Seeds are `{PROTOCOL['seeds']}` with mortality-stratified test fraction {PROTOCOL['test_fraction']}. CTGAN/TVAE have {PROTOCOL['ctgan_epochs']} epochs; mechanism seeds are `{PROTOCOL['mechanism_seeds']}`, using CTGAN log_frequency=False or TVAE {PROTOCOL['tvae_mechanism_epochs']} epochs. Full independent main-generator seed-0 fits and seeded attack repeats must match before accepting results. AIM retains the seed-0 repeat as a diagnostic: its OpenDP noise is outside Python/NumPy's seeded streams, so exact equality is not an acceptance criterion. Python, NumPy, Torch/SDV and XGBoost randomness is controlled; serial generator transforms avoid unsafe shared RNG contexts. Exact devices, library versions and source hashes remain in each receipt. CPU/GPU or operating-system bitwise equality is not assumed.
 
 ## Metric definitions
 
@@ -105,7 +105,7 @@ Every exported numeric quantity has mean, sample SD and `mean +/- t_(0.975,n-1)*
 {json.dumps(versions, indent=2)}
 ```
 
-Synthcity's isolated lazy-import compatibility patch leaves its DDPM algorithm/plugin sources unchanged; the receipts and patch are retained in revision outputs. AIM status is `{dp.get('state')}`; no unavailable DP result is imputed. Public seeds, non-private cohort construction and evaluation outputs are not an end-to-end certified DP release. Source access remains PhysioNet credentialed; no patient-level export belongs in GitHub or the aggregate review archive.
+Synthcity's isolated lazy-import compatibility patch leaves its DDPM algorithm/plugin sources unchanged; the receipts and patch are retained in revision outputs. AIM status is `{dp.get('state')}`; no unavailable DP result is imputed. The AIM compatibility receipt records SmartNoise 1.0.6, compatible Opacus 0.14.0 and OpenDP 0.14.2 plus the non-NaN scalar-domain declaration in calibration and Gaussian/Laplace helpers; calibration formulas and noise samplers are unchanged. Only completed AIM cells enter evaluation, with their effective seed counts. Public seeds, non-private cohort construction and evaluation outputs are not an end-to-end certified DP release. Source access remains PhysioNet credentialed; no patient-level export belongs in GitHub or the aggregate review archive.
 
 ## Executable formula excerpts
 
@@ -131,6 +131,8 @@ Synthcity's isolated lazy-import compatibility patch leaves its DDPM algorithm/p
     finding_rows = markdown(findings)
     dp_errors = dp.get('software_errors', [])
     dp_detail = '\n'.join('- `' + str(error).replace('`', '') + '`' for error in dp_errors) or 'The recorded status identifies the phase and exception; consult the private software-setup log for any additional detail.'
+    if dp.get('state') in ['full_protocol_complete', 'requested_cells_complete', 'budget_exhausted']:
+        dp_detail = 'Only completed AIM cells enter the aggregate tables; a time-limited partial attempt does not imply completion of all prescribed epsilon/seed cells. Effective versions and compatibility hashes are recorded in the AIM receipts.'
     figures_table = pd.DataFrame([{'path': row['path'], 'dpi': row['dpi'], 'description': row['description']} for row in figures])
     query_shortfalls = pd.DataFrame(validation.get('anonymeter_warnings', []))
     n_table_rows = len(changes)
@@ -218,7 +220,7 @@ All new estimates are generated as CSV/LaTeX tables and all listed figures are e
 
 {dp_detail}
 
-No additional unbounded dependency retry or generator training is triggered by finalization. This failure must be disclosed, rather than replaced with an invented DP comparison.
+No additional dependency retry or generator training is triggered by finalization. Report the recorded attempt state, completed cells and missing seed counts; do not fabricate or silently fill unavailable DP comparisons.
 
 ## Numerical comparisons and table files
 

@@ -119,3 +119,22 @@ commit or push was made. No values were manually adjusted to preserve findings.
   It never schedules generator training or retries unavailable AIM dependencies.
 - Verified with invented data; actual corrected server results require running
   finalization on the existing private server caches. The manuscript is unchanged.
+
+## 2026-11-10 — optional AIM compatibility repair
+
+- Centralized AIM dependencies in `server/requirements/dp.txt`: SmartNoise Synth
+  1.0.6, OpenDP 0.14.2 and compatible Opacus 0.14.0. Synthcity's separate Opacus
+  pin and other environments remain unchanged. Fresh setup and `--dp-only`
+  repair share the same bounded install, patch and generated-data checks.
+- Added a guarded, idempotent source patch declaring non-NaN scalar domains in
+  SmartNoise's calibration and Gaussian/Laplace utilities. Noise distributions,
+  calibration formulas, epsilon/delta, seeds, domains and AIM's generation limit
+  are unchanged. Effective versions, source hashes and compatibility identity
+  are recorded in setup/worker receipts and repaired environment snapshots.
+- Retained the seed-0 repeat fit but made equality diagnostic: OpenDP random
+  coins are not controlled by Python/NumPy seeds. No seeded replacement noise
+  is introduced and no exact-repeat claim is manufactured.
+- Added AIM-only bounded generation and evaluation stages, accepting completed
+  cells from a partial attempt and preserving terminal attempt guards. AIM uses
+  its own progress file; main fits, the main checkpoint, and Task 8(c) structural
+  approval remain unchanged. No structural evaluation is scheduled by repair.

@@ -7,7 +7,6 @@ evaluation aggregates do not constitute a certified DP release.
 import argparse
 import contextlib
 import hashlib
-import importlib.metadata
 import io
 import json
 import pickle
@@ -68,6 +67,8 @@ def decode(codes):
 
 
 def fit_sample(train, epsilon, seed):
+    from .patch_aim import provenance
+    provenance()  # Fail before fitting if this process lacks the declared compatibility fix.
     from snsynth.aim import AIMSynthesizer
     from snsynth.transform import TableTransformer, LabelTransformer
     random.seed(seed)
@@ -91,9 +92,11 @@ def fit_sample(train, epsilon, seed):
 def run(seed, epsilon):
     train, test = split_cohort(seed)
     name = 'AIM_eps' + str(int(epsilon))
+    from .patch_aim import provenance
+    compatibility = provenance()
     settings = {'generator': name, 'seed': seed, 'epsilon': epsilon, 'aim': SETTINGS,
                 'protocol': PROTOCOL, 'train_sha256': fingerprint(train),
-                'software': {p: importlib.metadata.version(p) for p in ['smartnoise-synth', 'numpy', 'pandas']}}
+                'software': compatibility['software'], 'compatibility': compatibility}
     settings['implementation_sha256'] = hashlib.sha256((inspect.getsource(fit_sample) + inspect.getsource(encode) + inspect.getsource(decode)).encode()).hexdigest()
     key = hashlib.sha256(json.dumps(settings, sort_keys=True).encode()).hexdigest()
     artifact = DATA / 'synthetic' / (key + '.pkl')
@@ -107,8 +110,8 @@ def run(seed, epsilon):
         if seed == 0:
             other, _ = fit_sample(train, epsilon, seed)
             identical = fingerprint(synth) == fingerprint(other)
-            if not identical:
-                raise RuntimeError('AIM independent same-seed repeat failed')
+            # OpenDP draws its own protected random coins. Python/NumPy seeds do
+            # not make these draws repeatable; never replace them with seeded noise.
     private_path('logs/' + name + '_seed' + str(seed) + '.log').write_text(captures.getvalue(), encoding='utf-8')
     artifact.parent.mkdir(parents=True, exist_ok=True)
     with artifact.open('wb') as stream:
@@ -116,10 +119,11 @@ def run(seed, epsilon):
     write_json(metadata_path, {'settings': settings, 'cache_key': key,
         'private_artifact': str(artifact.relative_to(DATA)), 'synthetic_sha256': fingerprint(synth),
         'rows': count(len(synth)), 'timings': timings, 'same_seed_independent_fit_identical': identical,
+        'repeat_scope': 'Python/NumPy seeds retained; OpenDP noise is not controlled by those seeds; exact repeat is diagnostic, not an acceptance criterion',
         'gender': {'train': category_counts(train.gender), 'test': category_counts(test.gender),
                    'synthetic': category_counts(synth.gender)}})
     from .environment_lock import save_lock
-    save_lock('dp')
+    save_lock('dp-aim-compatible')  # Preserve any older environment lock alongside the repaired stack.
     print(name + ' seed ' + str(seed) + ' complete', flush=True)
 
 
@@ -130,6 +134,7 @@ def main():
     parser.add_argument('--epsilon', type=float)
     parser.add_argument('--retry', action='store_true')
     args = parser.parse_args()
+    context = {'settings': SETTINGS, 'limit_seconds': PROTOCOL['dp_attempt_limit_seconds']}
     started = time.perf_counter()
     attempt_path = PUBLIC / 'dp_attempt.json'
     if attempt_path.exists() and not args.retry:
@@ -145,18 +150,21 @@ def main():
                 'exception': type(exc).__name__, 'message': str(exc), 'settings': SETTINGS})
             print('AIM unavailable: ' + str(exc), flush=True)
             return
+        from .patch_aim import provenance
+        context['compatibility'] = provenance()
+        write_json(attempt_path, dict(context, state='running'))
         for epsilon in [args.epsilon] if args.epsilon else SETTINGS['epsilon']:
             for seed in PROTOCOL['seeds'] if args.all_seeds else [args.seed]:
                 if time.perf_counter() - started >= PROTOCOL['dp_attempt_limit_seconds']:
-                    write_json(PUBLIC / 'dp_attempt.json', {'state': 'budget_exhausted', 'limit_seconds': PROTOCOL['dp_attempt_limit_seconds']})
+                    write_json(attempt_path, dict(context, state='budget_exhausted', wall_seconds=time.perf_counter() - started))
                     return
                 run(seed, epsilon)
-        write_json(PUBLIC / 'dp_attempt.json', {'state': 'full_protocol_complete' if args.all_seeds and args.epsilon is None else 'requested_cells_complete',
-            'wall_seconds': time.perf_counter() - started, 'settings': SETTINGS})
+        write_json(attempt_path, dict(context, state='full_protocol_complete' if args.all_seeds and args.epsilon is None else 'requested_cells_complete',
+            wall_seconds=time.perf_counter() - started))
     except Exception as exc:
         private_path('logs/aim_failure.log').write_text(traceback.format_exc(), encoding='utf-8')
-        write_json(PUBLIC / 'dp_attempt.json', {'state': 'failed', 'phase': 'fit_or_sample',
-            'exception': type(exc).__name__, 'wall_seconds': time.perf_counter() - started})
+        write_json(attempt_path, dict(context, state='failed', phase='fit_or_sample',
+            exception=type(exc).__name__, wall_seconds=time.perf_counter() - started))
         print('AIM attempt stopped after ' + type(exc).__name__ + '; no further DP tuning attempted.', flush=True)
 
 

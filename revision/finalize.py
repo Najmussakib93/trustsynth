@@ -132,7 +132,8 @@ def export_review():
         'table_I_dimensions.csv', 'table_I_raw_metrics.csv', 'table_II_representation.csv',
         'table_I_dimensions.tex', 'table_I_raw_metrics.tex', 'table_II_representation.tex',
         'analysis_manifest.json', 'figure_manifest.json', 'FINALIZATION_INPUT_AUDIT.json',
-        'DP_FAILURE_DETAILS.json', 'dp_attempt.json', 'structural_approval.json',
+        'DP_FAILURE_DETAILS.json', 'dp_attempt.json', 'dp_setup.json', 'structural_approval.json',
+        'aim_compatibility.json', 'aim_software_smoke.json', 'AIM_RUN_STATUS.json',
         'finalization_runtime_estimate.json', 'cohort_context.json', 'protocol.json'}
     candidates = [PUBLIC / name for name in sorted(allowed_top)]
     candidates += [PUBLIC / 'preprocessing/manifest.json']

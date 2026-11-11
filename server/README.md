@@ -170,3 +170,91 @@ GitHub does not carry the laptop's ignored caches or live status. Do not combine
 CPU and GPU seed results or assume bit-for-bit equality across operating systems,
 package versions or hardware. Keep the new host's receipts and environment
 snapshots with its results.
+
+## Repair and retry only optional AIM
+
+For a completed main benchmark, use the existing repository and caches:
+
+```bash
+cd /data/nsakib1/trustsynth
+git pull --ff-only origin master
+umask 077
+python3.10 server/setup.py --dp-only
+```
+
+`--dp-only` reuses (or creates) only `.venv-dp`; it does not rebuild SDV,
+Synthcity or Anonymeter and does not clear experiment/attempt records. Fresh
+full setup uses the same `revision.setup_dp` path. Dependencies are declared in
+`server/requirements/dp.txt`: SmartNoise Synth 1.0.6, Opacus 0.14.0, OpenDP
+0.14.2, the pinned private-pgm commit and the existing numeric/Torch versions.
+Synthcity's separate Opacus 1.4.0 remains unchanged.
+
+The repository-managed `revision.patch_aim` makes only three changes in installed
+`snsynth/utils.py`: `dp.atom_domain(T=float, nan=False)` in `cdp_rho`,
+`gaussian_noise`, and `laplace_noise`. It checks versions and call-site shapes,
+keeps a source backup inside the environment, invalidates bytecode, and is
+idempotent. No calibration formula or noise sampler is replaced. Provenance in
+`aim_compatibility.json` records effective versions and original/patched source
+hashes; each new generator receipt embeds these details in its cache key.
+
+Setup must pass `pip check`, `cdp_rho(1.0, 1e-6)`, scalar noise checks, and an
+invented-data test through the actual `revision.dp_generator.fit_sample` with
+all features and production settings. It writes `aim_software_smoke.json` and
+`dp_setup.json`. To repeat just the checks:
+
+```bash
+.venv-dp/bin/python -m pip check
+.venv-dp/bin/python -m revision.smoke_dp
+```
+
+Only after setup/checks pass, archive the existing failed terminal attempt and
+retry AIM. The archive contains metadata, not patient records:
+
+```bash
+mkdir -p results/private/revision/attempt-archive
+mv -n -- results/revision/dp_attempt.json \
+  "results/private/revision/attempt-archive/dp_attempt-$(date -u +%Y%m%dT%H%M%SZ).json"
+
+nohup .venv-sdv/bin/python -m revision.pipeline --stage aim --device cpu \
+  > results/private/aim-retry-launcher.log 2>&1 &
+echo "AIM supervisor PID: $!"
+```
+
+Use the supervisor rather than running the DP worker directly: it enforces the
+original **1,200-second total generation limit**, including seed-0 repeat fits.
+It preserves epsilon 1 and 10, delta 1e-6, seeds 0–9, fixed public domains and
+all AIM settings. A timeout retains completed cells; it is not a reason for
+automatic further attempts. The terminal-record guard remains active.
+
+OpenDP noise uses random coins outside Python/NumPy's seeded streams. The
+seed-0 independent fit is still run, but its equality is recorded as a diagnostic
+rather than requiring bit-for-bit equality or substituting seeded noise.
+
+```bash
+cat results/revision/dp_attempt.json
+cat results/revision/AIM_RUN_STATUS.json
+ls results/revision/generators/AIM_eps*_seed*.json
+```
+
+Accept only cells with a completed generator receipt and a matching private
+cache. Receipts record `settings.software`, `settings.compatibility`, epsilon,
+delta, seed and the repeat diagnostic; evaluation validates cache/train hashes.
+A partial attempt may contain fewer than twenty cells and must be reported as
+such. No clinical/synthetic rows should be printed.
+
+After the AIM supervisor finishes, evaluate only its completed cells:
+
+```bash
+nohup .venv-sdv/bin/python -m revision.pipeline --stage aim-evaluate --device cpu \
+  > results/private/aim-evaluation-launcher.log 2>&1 &
+```
+
+This runs fidelity, utility, fairness, membership/distance privacy and the declared
+Anonymeter attacks for the available AIM seed cells, then refreshes the aggregate
+metric index. Existing main models are not rerun. AIM progress uses
+`AIM_RUN_STATUS.json`; the main `RUN_STATUS.json` and **Task 8(c) structural
+approval checkpoint remain unchanged**. Neither AIM stage runs structural
+checks, TrustScore finalization or publication finalization. Detailed results
+are under `cells/AIM_eps*-*/`; final structural integration requires the separate
+approved workflow. Repaired environment locks use the name `dp-aim-compatible`
+so older environment snapshots remain available.

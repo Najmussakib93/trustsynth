@@ -119,6 +119,8 @@ def main():
                         if '_pilot' not in p.name and not p.name.startswith(('CTGAN_no_log', 'TVAE_900'))})
         for generator in names:
             for seed in CONFIG['singling_out']['seeds']:
+                if not (PUBLIC / 'generators' / (generator + '_seed' + str(seed) + '.json')).is_file():
+                    continue  # A bounded optional AIM attempt may complete only some cells.
                 run(generator, seed, 'singling_out')
                 if seed in CONFIG['linkability']['seeds']:
                     run(generator, seed, 'linkability')

@@ -15,6 +15,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
     parser.add_argument('--sdv-torch-index', help='Override the PyTorch 2.8 wheel index for your driver')
+    parser.add_argument('--dp-only', action='store_true', help='Repair/create only .venv-dp; reuse the other environments')
     args = parser.parse_args()
     if os.name == 'nt' or sys.version_info[:2] != (3, 10):
         parser.error('Use Linux with Python 3.10. This setup is separate from the existing Windows runtimes.')
@@ -46,6 +47,20 @@ def main():
         def overlay(python, kind):
             run([python, '-m', 'pip', 'install', '--no-deps', '-r', ROOT / 'server/requirements' / (kind + '.txt')])
 
+        def prepare_dp(reuse=False):
+            path = ROOT / '.venv-dp'
+            dp = path / 'bin/python' if reuse and path.exists() else create('dp')
+            run([dp, '-m', 'revision.setup_dp'], timeout=1200)
+
+        if args.dp_only:
+            try:
+                prepare_dp(reuse=True)
+            except (RuntimeError, subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
+                print('DP-only repair stopped: ' + type(exc).__name__ + '. Inspect ' + str(log_path.relative_to(ROOT)), file=sys.stderr)
+                return 1
+            print('DP-only repair and checks passed. Existing experiment/attempt records were preserved.', flush=True)
+            return 0
+
         print('Creating runtimes. Setup log: ' + str(log_path.relative_to(ROOT)), flush=True)
         try:
             sdv = create('sdv')
@@ -55,7 +70,7 @@ def main():
             run([sdv, '-m', 'unittest', 'revision.test_audit', 'revision.test_preprocessing',
                  'revision.test_metrics', 'revision.test_runtime_paths', 'revision.test_report_progress',
                  'revision.test_source_files', 'revision.test_constraint_proposal',
-                 'revision.test_finalization'])
+                 'revision.test_finalization', 'revision.test_aim'])
             print('SDV, evaluation and metric checks passed.', flush=True)
 
             synthcity = create('synthcity')
@@ -74,15 +89,9 @@ def main():
             run([anonymeter, '-m', 'revision.smoke_anonymeter'])
             print('Anonymeter checks passed.', flush=True)
 
-            dp = create('dp')
             try:
-                run([dp, '-m', 'pip', 'install', 'numpy==1.25.2', 'torch==2.2.2',
-                     '--extra-index-url', 'https://download.pytorch.org/whl/cpu'], timeout=600)
-                run([dp, '-m', 'pip', 'install', 'smartnoise-synth==1.0.6', 'opacus==1.4.0',
-                     'pandas==2.2.2', 'scikit-learn==1.3.2', 'scipy==1.13.1',
-                     'git+https://github.com/ryan112358/private-pgm.git@01f02f17eba440f4e76c1d06fa5ee9eed0bd2bca'], timeout=600)
-                run([dp, '-m', 'revision.inspect_environment', 'dp'], timeout=120)
-                dp_state = 'installed_pending_bounded_fit'
+                prepare_dp()
+                dp_state = 'installed_and_verified'
             except (subprocess.CalledProcessError, subprocess.TimeoutExpired) as exc:
                 dp_state = 'unavailable'
                 output = ROOT / 'results/revision'
